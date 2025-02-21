@@ -1,79 +1,92 @@
-# Data Project Template
+# Churn Prediction Model
 
-<a target="_blank" href="https://datalumina.com/">
-    <img src="https://img.shields.io/badge/Datalumina-Project%20Template-2856f7" alt="Datalumina Project" />
-</a>
+Este proyecto tiene como objetivo predecir la deserción de clientes utilizando varios modelos de machine learning, incluyendo Regresión Logística, Random Forest y Naive Bayes.
 
-## Cookiecutter Data Science
-This project template is a simplified version of the [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org) template, created to suit the needs of Datalumina and made available as a GitHub template.
+## Estructura del Proyecto
 
-## Adjusting .gitignore
-
-Ensure you adjust the `.gitignore` file according to your project needs. For example, since this is a template, the `/data/` folder is commented out and data will not be exlucded from source control:
-
-```plaintext
-# exclude data from source control by default
-# /data/
+```
+churn-predict-model/
+│
+├── data/
+│   ├── raw/
+│   │   └── Customer-Churn-Records.csv
+│   ├── processed/
+│   │   └── df.csv
+│   │   └── split_data.pkl
+│
+├── src/
+│   ├── dataset.py
+│   ├── modeling/
+│   │   ├── train.py
+│   │   ├── logistic_regression.py
+│   │   ├── random_forest.py
+│   │   ├── naive_bayes.py
+│   ├── plots.py
+│
+└── README.md
 ```
 
-Typically, you want to exclude this folder if it contains either sensitive data that you do not want to add to version control or large files.
+## Descripción de Archivos
 
-## Duplicating the .env File
-To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
+- **data/raw/Customer-Churn-Records.csv**: Archivo CSV con los datos originales de deserción de clientes.
+- **data/processed/df.csv**: Archivo CSV con los datos preprocesados.
+- **data/processed/split_data.pkl**: Archivo PKL con los datos divididos en conjuntos de entrenamiento y prueba.
+
+- **src/dataset.py**: Script para cargar, preprocesar y guardar los datos.
+- **src/modeling/train.py**: Script para cargar y preprocesar los datos, y dividirlos en conjuntos de entrenamiento y prueba.
+- **src/modeling/logistic_regression.py**: Script para entrenar y evaluar el modelo de Regresión Logística.
+- **src/modeling/random_forest.py**: Script para entrenar y evaluar el modelo de Random Forest.
+- **src/modeling/naive_bayes.py**: Script para entrenar y evaluar el modelo de Naive Bayes.
+- **src/plots.py**: Script para generar gráficos exploratorios de los datos.
+
+## Dependencias
+
+Para ejecutar este proyecto, necesitas instalar las siguientes dependencias:
 
 ```bash
-cp .env.example .env # Linux, macOS, Git Bash, WSL
-copy .env.example .env # Windows Command Prompt
+pip install pandas numpy scikit-learn matplotlib seaborn joblib
 ```
 
-This command creates a copy of `.env.example` and names it `.env`, allowing you to configure your environment variables specific to your setup.
+## Instrucciones
 
+1. **Preprocesar los datos**:
+   Ejecuta el script `dataset.py` para cargar, preprocesar y guardar los datos.
 
-## Project Organization
+   ```bash
+   python src/dataset.py
+   ```
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── README.md          <- The top-level README for developers using this project
-├── data
-│   ├── external       <- Data from third party sources
-│   ├── interim        <- Intermediate data that has been transformed
-│   ├── processed      <- The final, canonical data sets for modeling
-│   └── raw            <- The original, immutable data dump
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-└── src                         <- Source code for this project
-    │
-    ├── __init__.py             <- Makes src a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    │    
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    ├── plots.py                <- Code to create visualizations 
-    │
-    └── services                <- Service classes to connect with external platforms, tools, or APIs
-        └── __init__.py 
-```
+2. **Dividir los datos**:
+   Ejecuta el script `train.py` para cargar y preprocesar los datos, y dividirlos en conjuntos de entrenamiento y prueba.
 
---------
+   ```bash
+   python src/modeling/train.py
+   ```
+
+3. **Entrenar y evaluar los modelos**:
+   Ejecuta los scripts correspondientes para entrenar y evaluar cada modelo.
+
+   - Regresión Logística:
+
+     ```bash
+     python src/modeling/logistic_regression.py
+     ```
+
+   - Random Forest:
+
+     ```bash
+     python src/modeling/random_forest.py
+     ```
+
+   - Naive Bayes:
+
+     ```bash
+     python src/modeling/naive_bayes.py
+     ```
+
+4. **Generar gráficos exploratorios**:
+   Ejecuta el script `plots.py` para generar gráficos exploratorios de los datos.
+
+   ```bash
+   python src/plots.py
+   ```# modelo-prediccion-fuga
