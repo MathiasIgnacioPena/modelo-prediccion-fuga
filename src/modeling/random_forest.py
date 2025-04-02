@@ -48,23 +48,3 @@ plt.ylabel('Actual')
 plt.title('Random Forest Confusion Matrix')
 plt.show()
 
-# Calcular las probabilidades de predicción para Random Forest
-y_pred_proba_rf = modelo_rf.predict_proba(X_test)[:, 1]
-
-# Calcular la curva ROC para Random Forest
-fpr_rf, tpr_rf, thresholds_rf = roc_curve(Y_test, y_pred_proba_rf)
-
-# Calcular el AUC para Random Forest
-roc_auc_rf = roc_auc_score(Y_test, y_pred_proba_rf)
-
-# Visualizar la curva ROC para Random Forest
-plt.figure(figsize=(10,7))
-plt.plot(fpr_rf, tpr_rf, color='blue', lw=2, label=f'ROC curve (area = {roc_auc_rf:.2f})')
-plt.plot([0, 1], [0, 1], color='gray', lw=2, linestyle='--')
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
-plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate')
-plt.title('Random Forest Receiver Operating Characteristic (ROC) Curve')
-plt.legend(loc='lower right')
-plt.show()

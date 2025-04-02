@@ -61,4 +61,4 @@ data = data.drop(columns=['rownumber','customerid'])
 # 4. Guardar data nueva
 # ====================
 
-data.to_csv('../data/processed/df.csv',index=False)
+data.to_pickle('../data/processed/df.pkl')

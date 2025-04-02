@@ -11,7 +11,7 @@ import seaborn as sns
 # 2. Cargar la base
 # ====================
 
-df = pd.read_csv('../data/processed/df.csv')
+df = pd.read_pickle('../data/processed/df.pkl')
 
 # ====================
 # 3. Gráficos
@@ -49,7 +49,6 @@ plt.show()
 ## Ver la cantidad de personas que son 1 y 0 en exited, por pais y genero
 
 plt.figure(figsize=(18,6))
-
 plt.subplot(1, 2, 1)
 sns.countplot(x='exited', hue='geography', data=df)
 plt.title('Count of Exited by Country')

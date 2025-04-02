@@ -1,6 +1,6 @@
 # Churn Prediction Model
 
-Este proyecto tiene como objetivo predecir la deserción de clientes utilizando varios modelos de machine learning, incluyendo Regresión Logística, Random Forest y Naive Bayes.
+Este proyecto tiene como objetivo predecir la deserción de clientes utilizando varios modelos de machine learning, incluyendo Regresión Logística, Random Forest.
 
 ## Estructura del Proyecto
 
@@ -20,7 +20,6 @@ churn-predict-model/
 │   │   ├── train.py
 │   │   ├── logistic_regression.py
 │   │   ├── random_forest.py
-│   │   ├── naive_bayes.py
 │   ├── plots.py
 │
 └── README.md
@@ -36,7 +35,6 @@ churn-predict-model/
 - **src/modeling/train.py**: Script para cargar y preprocesar los datos, y dividirlos en conjuntos de entrenamiento y prueba.
 - **src/modeling/logistic_regression.py**: Script para entrenar y evaluar el modelo de Regresión Logística.
 - **src/modeling/random_forest.py**: Script para entrenar y evaluar el modelo de Random Forest.
-- **src/modeling/naive_bayes.py**: Script para entrenar y evaluar el modelo de Naive Bayes.
 - **src/plots.py**: Script para generar gráficos exploratorios de los datos.
 
 ## Dependencias
@@ -78,16 +76,9 @@ pip install pandas numpy scikit-learn matplotlib seaborn joblib
      python src/modeling/random_forest.py
      ```
 
-   - Naive Bayes:
-
-     ```bash
-     python src/modeling/naive_bayes.py
-     ```
-
 4. **Generar gráficos exploratorios**:
    Ejecuta el script `plots.py` para generar gráficos exploratorios de los datos.
 
    ```bash
    python src/plots.py
-   ```# modelo-prediccion-fuga
-# modelo-prediccion-fuga
+   ```
